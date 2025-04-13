@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1053494612594",
+    "project_id": "fight-radar",
+    "storage_bucket": "fight-radar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053494612594:android:cc74ca210ead706249a8eb",
+        "android_client_info": {
+          "package_name": "com.osf.fightradar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053494612594-9rctk2baimj5thpdvd8ducbndblq94lc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZRGVBm4m4J2DO6bPrS9Rb1qybm2N3-Vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053494612594-9rctk2baimj5thpdvd8ducbndblq94lc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,8 +1,10 @@
 // screens/LoginScreen.tsx
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import { NavigationProp } from '@react-navigation/native';
+import { signInWithGoogle } from '../../firebase';
+import sebooImage from '../assets/images/seboo.png';
 
 const LoginScreen: React.FC<{ navigation: NavigationProp<any> }> = ({ navigation }) => {
   return (
@@ -12,6 +14,21 @@ const LoginScreen: React.FC<{ navigation: NavigationProp<any> }> = ({ navigation
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
       <Button title="Login" onPress={() => navigation.navigate('Main')} />
       <Button title="Create Account" onPress={() => navigation.navigate('SignUp')} />
+      <TouchableOpacity
+        style={styles.googleButton}
+        onPress={async () => {
+          try {
+            const user = await signInWithGoogle();
+            console.log('Google Sign-In successful:', user);
+            navigation.navigate('Main');
+          } catch (error) {
+            console.error('Google Sign-In failed:', error);
+          }
+        }}
+      >
+        <Image source={sebooImage} style={{ width: 24, height: 24, marginRight: 8 }} />
+        <Text style={styles.googleText}>Sign in with Google</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -35,6 +52,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 12,
     paddingLeft: 8,
+  },
+  googleButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#4285F4',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  googleText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 

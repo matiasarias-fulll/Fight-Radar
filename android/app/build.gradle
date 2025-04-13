@@ -83,7 +83,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.fightradar"
+    namespace "com.fightradar.app"
     defaultConfig {
         applicationId 'com.fightradar.app'
         minSdkVersion rootProject.ext.minSdkVersion
